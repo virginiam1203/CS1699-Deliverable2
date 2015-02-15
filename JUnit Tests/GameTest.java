@@ -26,6 +26,9 @@ public class GameTest {
 		game = new Game(mockPlayer, mockHouse);
 	}
 	
+	/*
+	 * Test to see if the Game constructor returns a non-null value.
+	 */
 	@Test 
 	public void testGameConstructor() {
 		game = null;
