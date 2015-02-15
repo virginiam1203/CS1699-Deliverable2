@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,22 +16,16 @@ public class CoffeeMakerTest {
 	private ByteArrayOutputStream errorOutputStream;
 
 	/*
-	 * This function is called before each test is run. Create a Game instance.
+	 * This function initializes a new CoffeeMaker instance before each test is run.
 	 */
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		coffeeMaker = new CoffeeMaker();
 	}
 	
 	/*
-	 * This function is called after each test is run.
-	 */
-	@After
-	public void tearDown() {}
-	
-	/*
-	 * Test to see if the actual text outputted to the console matches the expected
-	 * text when "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg) function.
+	 * Test to see if the actual text outputted to the console matches the expected text when
+	 * "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg) function.
 	 */
 	@Test
 	public void testRunArgsOutputStream() {
@@ -44,15 +37,18 @@ public class CoffeeMakerTest {
 		
 		coffeeMaker.runArgs("¡¢£¤¥¦§¨©ª«¬®µ¶");
 		assertTrue(outputStream.toString().contains("Instructions for Coffee Maker Quest - "));
-		assertTrue(outputStream.toString().contains("You are a brave student trying to study for finals, but you need caffeine."));
-		assertTrue(outputStream.toString().contains("The goal of the game is to collect sugar, coffee, and cream so that you can study."));
+		assertTrue(outputStream.toString().contains("You are a brave student trying to study for"
+				+ " finals, but you need caffeine."));
+		assertTrue(outputStream.toString().contains("The goal of the game is to collect sugar,"
+				+ " coffee, and cream so that you can study."));
 		
 		System.setOut(null);
 		System.setErr(null);
 	}
 	
 	/*
-	 * Test to see if 0 is returned when "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg) function.
+	 * Test to see if 0 is returned when "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg)
+	 * function.
 	 */
 	@Test
 	public void testRunArgsReturnValue() {
