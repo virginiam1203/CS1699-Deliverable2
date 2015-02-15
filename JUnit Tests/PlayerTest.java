@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ public class PlayerTest {
 	private Player player;
 	
 	/*
-	 * This function is called before each test is run. Initialize player instance to null.
+	 * This function initializes a Player instance to null before each test is run.
 	 */
 	@Before
 	public void setUp() {
@@ -20,32 +19,26 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * This function is called after each test is run.
-	 */
-	@After
-	public void tearDown() {}
-	
-	/*
-	 * Test to see if a non-null value is returned when Player() constructor is called.
+	 * Test to see if a non-null value is returned when the Player() constructor is called.
 	 */
 	@Test
 	public void testPlayerConstructorNoParameters() {
-		player = null;
-		assertNotNull(player = new Player());
+		player = new Player();
+		assertNotNull(player);
 	}
 	
 	/*
-	 * Test to see if a non-null value is returned when Player(boolean sugar, boolean 
+	 * Test to see if a non-null value is returned when the Player(boolean sugar, boolean 
 	 * cream, boolean coffee) constructor is called.
 	 */
 	@Test
 	public void testPlayerConstructorYesParameters() {
-		player = null;
-		assertNotNull(player = new Player(true, true, true));
+		player = new Player(true, true, true);
+		assertNotNull(player);
 	}
 	
 	/*
-	 * Test to see if getSugar() function works.
+	 * Test to see if True is returned after the getSugar() function has been called.
 	 */
 	@Test
 	public void testGetSugar() {
@@ -55,7 +48,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if getCream() function works.
+	 * Test to see if True is returned after the getCream() function has been called.
 	 */
 	@Test
 	public void testGetCream() {
@@ -65,7 +58,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if getCoffee() function works.
+	 * Test to see if True is returned after the getCoffee() function has been called.
 	 */
 	@Test
 	public void testGetCoffee() {
@@ -75,7 +68,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if hasAllItems() function works.
+	 * Test to see if True is returned after the all items have been collected.
 	 */
 	@Test
 	public void testHasAllItems() {
@@ -84,8 +77,8 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when drink() function is called when Player has Sugar,
-	 * Cream, and coffee.
+	 * Test to see if True is returned when the drink() function is called when Player has sugar,
+	 * cream, and coffee.
 	 */
 	@Test
 	public void testDrinkAll() {
@@ -94,7 +87,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has Coffee
+	 * Test to see if True is returned when the drink() function is called when Player has coffee.
 	 */
 	@Test
 	public void testDrinkCoffee() {
@@ -104,7 +97,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has Coffee
+	 * Test to see if True is returned when the drink() function is called when Player has coffee
 	 * and cream.
 	 */
 	@Test
@@ -116,7 +109,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has cream.
+	 * Test to see if True is returned when the drink() function is called when Player has cream.
 	 */
 	@Test
 	public void testDrinkCream() {
@@ -126,7 +119,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has Cream
+	 * Test to see if True is returned when the drink() function is called when Player has cream
 	 * and sugar.
 	 */
 	@Test
@@ -138,7 +131,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has sugar.
+	 * Test to see if True is returned when the drink() function is called when Player has sugar.
 	 */
 	@Test
 	public void testDrinkSugar() {
@@ -148,7 +141,7 @@ public class PlayerTest {
 	}
 	
 	/*
-	 * Test to see if False is returned when drink() function is called when Player has no items.
+	 * Test to see if False is returned when the drink() function is called when Player has no items.
 	 */
 	@Test
 	public void testDrinkEmptyInventory() {
