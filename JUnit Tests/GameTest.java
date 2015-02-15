@@ -1,12 +1,12 @@
 package com.laboon;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,8 +16,8 @@ public class GameTest {
 	private Game game;
 	
 	/*
-	 * This function is called before each test is run. Create a mock instance of a
-	 * Player and a House. Using these two mock instances create a Game instance.
+	 * This function initializes a new Game instance before each test is run. The
+	 * Game instance is initialized with a mock Player and a mock House.
 	 */
 	@Before
 	public void setUp() {
@@ -26,11 +26,12 @@ public class GameTest {
 		game = new Game(mockPlayer, mockHouse);
 	}
 	
-	/*
-	 * This function is called after each test is run.
-	 */
-	@After
-	public void tearDown() {}
+	@Test 
+	public void testGameConstructor() {
+		game = null;
+		game = new Game(mockPlayer, mockHouse);
+		assertNotNull(game);
+	}
 	
 	/*
 	 * Test to see if the House moves North when "N" is passed to the Game.
@@ -39,14 +40,6 @@ public class GameTest {
 	public void testMoveNorth() {
 		game.doSomething("N");
 		verify(mockHouse).moveNorth();
-	}
-	
-	/*
-	 * Test to see if 0 is returned when "N" is passed to the Game.
-	 */
-	@Test
-	public void testMoveNorthReturnValue() {
-		assertEquals(0, game.doSomething("N"));
 	}
 	
 	/*
@@ -59,28 +52,12 @@ public class GameTest {
 	}
 	
 	/*
-	 * Test to see if 0 is returned when "S" is passed to the Game.
-	 */
-	@Test
-	public void testMoveSouthReturnValue() {
-		assertEquals(0, game.doSomething("S"));
-	}
-	
-	/*
 	 * Test to see if the House looks when "L" is passed to the Game.
 	 */
 	@Test
 	public void testLook() {
 		game.doSomething("L");
 		verify(mockHouse).look(mockPlayer, null);
-	}
-	
-	/*
-	 * Test to see if 0 is returned when "L" is passed to the Game.
-	 */
-	@Test
-	public void testLookReturnValue() {
-		assertEquals(0, game.doSomething("L"));
 	}
 	
 	/*
@@ -93,20 +70,44 @@ public class GameTest {
 	}
 	
 	/*
-	 * Test to see if 0 is returned when "I" is passed to the Game.
-	 */
-	@Test
-	public void testShowInventoryReturnValue() {
-		assertEquals(0, game.doSomething("I"));
-	}
-	
-	/*
 	 * Test to see if the Player drinks when "D" is passed to the Game.
 	 */
 	@Test
 	public void testDrink() {
 		game.doSomething("D");
 		verify(mockPlayer).drink();
+	}
+	
+	/*
+	 * Test to see if 0 is returned when "N" is passed to the Game.
+	 */
+	@Test
+	public void testMoveNorthReturnValue() {
+		assertEquals(0, game.doSomething("N"));
+	}
+	
+	/*
+	 * Test to see if 0 is returned when "S" is passed to the Game.
+	 */
+	@Test
+	public void testMoveSouthReturnValue() {
+		assertEquals(0, game.doSomething("S"));
+	}
+	
+	/*
+	 * Test to see if 0 is returned when "L" is passed to the Game.
+	 */
+	@Test
+	public void testLookReturnValue() {
+		assertEquals(0, game.doSomething("L"));
+	}
+	
+	/*
+	 * Test to see if 0 is returned when "I" is passed to the Game.
+	 */
+	@Test
+	public void testShowInventoryReturnValue() {
+		assertEquals(0, game.doSomething("I"));
 	}
 	
 	/*
@@ -128,10 +129,10 @@ public class GameTest {
 	}
 	
 	/*
-	 * Test to see if 0 is returned when a non-valid command is passed to the game.
+	 * Test to see if 0 is returned when a non-valid command is passed to the Game.
 	 */
 	@Test
-	public void testWhat() {
+	public void testInvalidCommand() {
 		assertEquals(0, game.doSomething("¡¢£¤¥¦§¨©ª«¬®µ¶"));
 	}
 	
