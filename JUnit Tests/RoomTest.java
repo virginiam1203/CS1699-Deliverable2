@@ -3,39 +3,23 @@ package com.laboon;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class RoomTest {
 	private Room room;
 	
 	/*
-	 * This function is called before each test is run. Initialize room instance to null.
-	 */
-	@Before
-	public void setUp() {
-		room = null;
-	}
-	
-	/*
-	 * This function is called after each test is run.
-	 */
-	@After
-	public void tearDown() {}
-	
-	/*
-	 * Test to see if True is returned when hasItem() function is called when Room has Coffee,
+	 * Test to see if True is returned when the hasItem() function is called when Room has coffee,
 	 * cream, and sugar.
 	 */
 	@Test
 	public void testHasItem() {
-		room = new Room(true, true, true, true, true);
+		room = new Room(true, true, true, false, false);
 		assertTrue(room.hasItem());
 	}
 	
 	/*
-	 * Test to see if False is returned when hasItem() function is called when Room no items.
+	 * Test to see if False is returned when the hasItem() function is called when the Room has no items.
 	 */
 	@Test
 	public void testHasNoItems() {
@@ -44,7 +28,7 @@ public class RoomTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when hasSugar() function is called when Room has Sugar.
+	 * Test to see if True is returned when the hasItem() function is called when Room has sugar.
 	 */
 	@Test
 	public void testHasSugar() {
@@ -53,7 +37,7 @@ public class RoomTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when hasCream() function is called when Room has Cream.
+	 * Test to see if True is returned when the hasItem() function is called when Room has cream.
 	 */
 	@Test
 	public void testHasCream() {
@@ -62,7 +46,7 @@ public class RoomTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when hasCoffee() function is called when Room has coffee.
+	 * Test to see if True is returned when the hasItem() function is called when Room has coffee.
 	 */
 	@Test
 	public void testHasCoffee() {
@@ -71,7 +55,7 @@ public class RoomTest {
 	}
 
 	/*
-	 * Test to see if True is returned when northExit() function is called when Room has a North Exit.
+	 * Test to see if True is returned when the northExit() function is called when Room has a North exit.
 	 */
 	@Test
 	public void testHasNorthExit() {
@@ -80,7 +64,7 @@ public class RoomTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when southExit() function is called when Room has a South Exit.
+	 * Test to see if True is returned when the southExit() function is called when Room has a South exit.
 	 */
 	@Test
 	public void testHasSouthExit() {
@@ -89,7 +73,7 @@ public class RoomTest {
 	}
 	
 	/*
-	 * Test to see if True is returned when getDescription() function is called.
+	 * Test to see if True is returned when the getDescription() function is called.
 	 */
 	@Test
 	public void testGetDescription() {
