@@ -80,6 +80,9 @@ public class HouseTest {
 	/*
 	 * Test to see if "You are in a magical land!  But you are returned to the beginning!" is returned when
 	 * getCurrentRoomInfo() function is called on the room South of the first room.
+	 * FUN-MOVE - The system shall allow a player to move North only if a door exists going North, and South 
+	 * only if a door exists going South. DEFECT FOUND!
+	 * 
 	 */
 	@Test
 	public void testOutOfBoundsSouth() {
@@ -90,6 +93,8 @@ public class HouseTest {
 	/*
 	 * Test to see if "You are in a magical land!  But you are returned to the beginning!" is returned when
 	 * getCurrentRoomInfo() function is called on the room North of the third room.
+	 * FUN-MOVE - The system shall allow a player to move North only if a door exists going North, and South 
+	 * only if a door exists going South. DEFECT FOUND!
 	 */
 	@Test
 	public void testOutOfBoundsNorth() {
