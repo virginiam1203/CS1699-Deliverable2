@@ -37,19 +37,40 @@ public class GameTest {
 	}
 	
 	/*
+	 * Test to see if the House moves North when "n" is passed to the Game.
+	 * FUN-INPUT-CAPS - The system shall be case-insensitive in regards to input 
+	 * values; that is, it shall accept capital and lower-case letters and treat 
+	 * them as equivalent. DEFECT FOUND!
+	 */
+	@Test
+	public void testMoveNorthLower() {
+		game.doSomething("n");
+		verify(mockHouse).moveNorth();
+	}
+	
+	/*
 	 * Test to see if the House moves North when "N" is passed to the Game.
 	 */
 	@Test
-	public void testMoveNorth() {
+	public void testMoveNorthUpper() {
 		game.doSomething("N");
 		verify(mockHouse).moveNorth();
+	}
+	
+	/*
+	 * Test to see if the House moves South when "s" is passed to the Game.
+	 */
+	@Test
+	public void testMoveSouthLower() {
+		game.doSomething("s");
+		verify(mockHouse).moveSouth();
 	}
 	
 	/*
 	 * Test to see if the House moves South when "S" is passed to the Game.
 	 */
 	@Test
-	public void testMoveSouth() {
+	public void testMoveSouthUpper() {
 		game.doSomething("S");
 		verify(mockHouse).moveSouth();
 	}
@@ -70,6 +91,19 @@ public class GameTest {
 	public void testShowInventory() {
 		game.doSomething("I");
 		verify(mockPlayer).showInventory();
+	}
+	
+	/*
+	 * Test to see if the help menu is shown when a user sends the command "H".
+	 * FUN-ITERATION - At each iteration of the game, the user shall be able enter 
+	 * one of six commands - "N" to go North, "S" to go South, "L" to Look for items, 
+	 * "I" for Inventory, "H" for Help, or "D" to Drink. DEFECT FOUND!
+	 */
+	@Test
+	public void testShowMenu() {
+		fail("Non-programmed help menu in Game.java prevents this method from being tested!");
+		// game.doSomething("H");
+		// verify(mockPlayer).showMenu();
 	}
 	
 	/*

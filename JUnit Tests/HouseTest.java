@@ -2,6 +2,7 @@ package com.laboon;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -78,25 +79,30 @@ public class HouseTest {
 	}
 	
 	/*
-	 * Test to see if "You are in a magical land!  But you are returned to the beginning!" is returned when
-	 * getCurrentRoomInfo() function is called on the room South of the first room.
+	 * Test to see if you can move South only if a door exists going South (in this case, there is no door
+	 * going South).
+	 * FUN-MOVE - The system shall allow a player to move North only if a door exists going North, and South 
+	 * only if a door exists going South. DEFECT FOUND!
+	 * 
 	 */
 	@Test
 	public void testOutOfBoundsSouth() {
 		house.moveSouth();
-		assertEquals("You are in a magical land!  But you are returned to the beginning!", house.getCurrentRoomInfo());
+		assertNotSame("You are in a magical land!  But you are returned to the beginning!", house.getCurrentRoomInfo());
 	}
 	
 	/*
-	 * Test to see if "You are in a magical land!  But you are returned to the beginning!" is returned when
-	 * getCurrentRoomInfo() function is called on the room North of the third room.
+	 * Test to see if you can move North only if a door exists going North (in this case, there is no door
+	 * going North).
+	 * FUN-MOVE - The system shall allow a player to move North only if a door exists going North, and South 
+	 * only if a door exists going South. DEFECT FOUND!
 	 */
 	@Test
 	public void testOutOfBoundsNorth() {
 		house.moveNorth();
 		house.moveNorth();
 		house.moveNorth();
-		assertEquals("You are in a magical land!  But you are returned to the beginning!", house.getCurrentRoomInfo());
+		assertNotSame("You are in a magical land!  But you are returned to the beginning!", house.getCurrentRoomInfo());
 	}
 	
 	/*
