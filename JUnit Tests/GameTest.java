@@ -73,6 +73,16 @@ public class GameTest {
 	}
 	
 	/*
+	 * Test to see if the help menu is shown when a user sends the command "H".
+	 */
+	@Test
+	public void testShowMenu() {
+		fail("Non-programmed help menu in Game.java prevents this method from being tested!");
+		// game.doSomething("H");
+		// verify(mockPlayer).showMenu();
+	}
+	
+	/*
 	 * Test to see if the Player drinks when "D" is passed to the Game.
 	 */
 	@Test
