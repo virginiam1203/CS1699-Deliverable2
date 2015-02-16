@@ -136,7 +136,7 @@ public class GameTest {
 	 */
 	@Test
 	public void testInvalidCommand() {
-		assertEquals(0, game.doSomething("¡¢£¤¥¦§¨©ª«¬®µ¶"));
+		assertEquals(0, game.doSomething("deliverable2"));
 	}
 	
 	/*

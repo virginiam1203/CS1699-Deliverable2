@@ -25,7 +25,7 @@ public class CoffeeMakerTest {
 	
 	/*
 	 * Test to see if the actual text outputted to the console matches the expected text when
-	 * "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg) function.
+	 * "deliverable2" is passed to the runArgs(String arg) function.
 	 */
 	@Test
 	public void testRunArgsOutputStream() {
@@ -35,7 +35,7 @@ public class CoffeeMakerTest {
 		System.setOut(new PrintStream(outputStream));
 		System.setErr(new PrintStream(errorOutputStream));
 		
-		coffeeMaker.runArgs("¡¢£¤¥¦§¨©ª«¬®µ¶");
+		coffeeMaker.runArgs("deliverable2");
 		assertTrue(outputStream.toString().contains("Instructions for Coffee Maker Quest - "));
 		assertTrue(outputStream.toString().contains("You are a brave student trying to study for"
 				+ " finals, but you need caffeine."));
@@ -47,11 +47,11 @@ public class CoffeeMakerTest {
 	}
 	
 	/*
-	 * Test to see if 0 is returned when "¡¢£¤¥¦§¨©ª«¬®µ¶" is passed to the runArgs(String arg)
+	 * Test to see if 0 is returned when "deliverable2" is passed to the runArgs(String arg)
 	 * function.
 	 */
 	@Test
 	public void testRunArgsReturnValue() {
-		assertEquals(0, coffeeMaker.runArgs("¡¢£¤¥¦§¨©ª«¬®µ¶"));
+		assertEquals(0, coffeeMaker.runArgs("deliverable2"));
 	}
 }
